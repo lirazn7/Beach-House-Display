@@ -1,5 +1,4 @@
 {
-  "rootDirectory": "artifacts/casa-juquehy",
   "buildCommand": "pnpm run build",
   "installCommand": "pnpm install",
   "outputDirectory": "dist/public",
