@@ -1,0 +1,27 @@
+kind = "web"
+previewPath = "/"
+title = "Casa Juquehy"
+version = "1.0.0"
+id = "artifacts/casa-juquehy"
+router = "path"
+
+[[services]]
+name = "web"
+paths = [ "/" ]
+localPort = 21746
+
+[services.development]
+run = "pnpm --filter @workspace/casa-juquehy run dev"
+
+[services.production]
+build = [ "pnpm", "--filter", "@workspace/casa-juquehy", "run", "build" ]
+serve = "static"
+publicDir = "artifacts/casa-juquehy/dist/public"
+
+[[services.production.rewrites]]
+from = "/*"
+to = "/index.html"
+
+[services.env]
+PORT = "21746"
+BASE_PATH = "/"
