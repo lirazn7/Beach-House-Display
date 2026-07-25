@@ -134,7 +134,7 @@ export default function App() {
               { icon: Wind, label: "Ar Condicionado" },
               { icon: Wifi, label: "Wi-Fi Veloz" },
               { icon: Coffee, label: "Área Gourmet" },
-              { icon: Car, label: "Garagem para 4 carros" },
+              { icon: Car, label: "Vaga para 4 carros" },
               { icon: Trees, label: "Jardim Amplo" },
             ].map((amenity, idx) => (
               <Reveal key={idx} animation="fade-up" delay={idx * 100}>
