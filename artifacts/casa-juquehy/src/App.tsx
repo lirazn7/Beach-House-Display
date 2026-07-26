@@ -144,8 +144,6 @@ export default function App() {
       {/* 3. AMENITIES SECTION */}
       <section className="bg-white py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
-          {/* Adicionamos items-center e text-center para o mobile, e voltamos para o alinhamento original no desktop com md:items-end e md:text-left */}
-          <div className="flex flex-col items-center text-center md:flex-row md:text-left md:justify-between md:items-end mb-12 gap-6">
           <Reveal animation="fade-up">
             <div className="text-center mb-16">
               <span className="text-secondary font-semibold tracking-widest uppercase text-sm mb-3 block">Estrutura</span>
@@ -233,7 +231,7 @@ export default function App() {
       {/* 5. FULL GALLERY */}
       <section className="bg-white py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
+          <div className="flex flex-col items-center text-center md:flex-row md:text-left md:justify-between md:items-end mb-12 gap-6">
             <Reveal animation="fade-up">
               <span className="text-secondary font-semibold tracking-widest uppercase text-sm mb-3 block">Olhar</span>
               <h2 className="text-3xl md:text-5xl font-serif">Galeria Completa</h2>
@@ -343,7 +341,7 @@ export default function App() {
           </div>
           
           <div className="flex gap-4">
-            <a href="https://www.instagram.com/juquehy_home?igsh=MWZhcmR2dDJiODhiaw==" className="hover:text-white transition-colors">
+            <a href="https://www.instagram.com/juquehy_home?igsh=MWZhcmR2dDJiODhiaw==" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
           </div>
