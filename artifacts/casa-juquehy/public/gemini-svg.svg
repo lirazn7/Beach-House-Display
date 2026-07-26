@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+  <!-- Sol -->
+  <circle cx="128" cy="104" r="56" fill="#FDB813"/>
+  <!-- Onda 1 (fundo) -->
+  <path d="M8 184c40-32 80-32 120 0s80 32 120 0" fill="none" stroke="#0077BE" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Onda 2 (frente) -->
+  <path d="M8 232c40-32 80-32 120 0s80 32 120 0" fill="none" stroke="#00A8E8" stroke-width="28" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
