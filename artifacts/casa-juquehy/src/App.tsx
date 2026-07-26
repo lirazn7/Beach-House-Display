@@ -69,11 +69,9 @@ export default function App() {
             <Button 
               size="lg" 
               className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-xl transition-transform hover:scale-105"
-              asChild
+              onClick={() => document.getElementById('contato')?.scrollIntoView({ behavior: 'smooth' })}
             >
-              <a href="#contato">
-                Ver Disponibilidade
-              </a>
+              Ver Disponibilidade
             </Button>
           </Reveal>
         </div>
