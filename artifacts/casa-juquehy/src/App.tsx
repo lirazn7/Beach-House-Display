@@ -310,7 +310,7 @@ export default function App() {
                   Falar no WhatsApp
                 </Button>
               </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
+              <DialogContent className="sm:max-w-md data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-bottom-10 duration-300">
                 <DialogHeader>
                   <DialogTitle className="text-center text-lg">Entre em contato com um dos proprietários</DialogTitle>
                 </DialogHeader>
