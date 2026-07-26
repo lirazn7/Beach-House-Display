@@ -66,33 +66,15 @@ export default function App() {
           </Reveal>
           
           <Reveal animation="scale-up" delay={800}>
-            <Dialog>
-              <DialogTrigger asChild>
-                <Button 
-                  size="lg" 
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-xl transition-transform hover:scale-105"
-                >
-                  Ver Disponibilidade
-                </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md">
-                <DialogHeader>
-                  <DialogTitle className="text-center text-lg">Entre em contato com um dos proprietários</DialogTitle>
-                </DialogHeader>
-                <div className="flex flex-col gap-4 mt-4">
-                  <Button variant="default" className="w-full text-lg h-12" asChild>
-                    <a href="https://wa.link/rf7prh" target="_blank" rel="noopener noreferrer">
-                      Contato 1
-                    </a>
-                  </Button>
-                  <Button variant="default" className="w-full text-lg h-12" asChild>
-                    <a href="https://wa.link/u1b62u" target="_blank" rel="noopener noreferrer">
-                      Contato 2
-                    </a>
-                  </Button>
-                </div>
-              </DialogContent>
-            </Dialog>
+            <Button 
+              size="lg" 
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-xl transition-transform hover:scale-105"
+              asChild
+            >
+              <a href="#contato">
+                Ver Disponibilidade
+              </a>
+            </Button>
           </Reveal>
         </div>
       </section>
@@ -284,7 +266,7 @@ export default function App() {
       </section>
 
       {/* 7. CTA & FOOTER */}
-      <section className="bg-foreground text-background py-32 px-6 text-center">
+      <section id="contato" className="bg-foreground text-background py-32 px-6 text-center">
         <div className="max-w-3xl mx-auto space-y-10">
           <Reveal animation="fade-up">
             <Sun className="w-12 h-12 text-primary mx-auto opacity-80" strokeWidth={1} />
