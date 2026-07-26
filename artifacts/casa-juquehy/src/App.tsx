@@ -264,17 +264,30 @@ export default function App() {
 
       {/* 7. CTA & FOOTER */}
       <section id="contato" className="bg-foreground text-background py-32 px-6 text-center">
-        <div className="max-w-3xl mx-auto space-y-10">
+        {/* Adicionado flex, flex-col e items-center aqui para forçar a centralização de tudo */}
+        <div className="max-w-3xl mx-auto flex flex-col items-center space-y-10">
+          
           <Reveal animation="fade-up">
-            <Sun className="w-12 h-12 text-primary mx-auto opacity-80" strokeWidth={1} />
+            <Sun className="w-12 h-12 text-primary opacity-80" strokeWidth={1} />
+          </Reveal>
+          
+          <Reveal animation="fade-up" delay={100}>
+            <h2 className="text-4xl md:text-6xl font-serif">Sua próxima viagem começa aqui.</h2>
+          </Reveal>
+          
+          <Reveal animation="fade-up" delay={200}>
+            <p className="text-xl text-white/60 font-light">
+              Consulte nossas datas disponíveis e garanta seus dias de descanso.
+            </p>
           </Reveal>
           
           <Reveal animation="scale-up" delay={400}>
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
+                {/* Alterado para inline-flex para não quebrar a centralização */}
                 <Button 
                   size="lg" 
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 rounded-full shadow-2xl transition-transform hover:scale-105 outline-none flex items-center"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 rounded-full shadow-2xl transition-transform hover:scale-105 outline-none inline-flex items-center justify-center"
                 >
                   Entre em contato <ChevronDown className="ml-2 w-5 h-5" />
                 </Button>
@@ -302,6 +315,7 @@ export default function App() {
               </DropdownMenuContent>
             </DropdownMenu>
           </Reveal>
+
         </div>
       </section>
 
