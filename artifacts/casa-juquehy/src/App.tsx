@@ -1,11 +1,18 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Gallery } from '@/components/Gallery';
 import { Reveal } from '@/components/Reveal';
 import { HERO_IMAGE, GALLERY_IMAGES } from '@/lib/images';
 import { 
   Wifi, Waves, Wind, Car, MapPin, 
-  Coffee, Sun, Trees, ArrowRight, Instagram 
+  Coffee, Sun, Trees, Instagram 
 } from 'lucide-react';
 import { useInView } from '@/hooks/use-in-view';
 import { cn } from '@/lib/utils';
@@ -25,8 +32,6 @@ function RevealImage({ src, alt, className }: { src: string, alt: string, classN
 }
 
 export default function App() {
-  const WHATSAPP_LINK = "#";
-
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-primary/20 selection:text-foreground">
       
@@ -61,15 +66,33 @@ export default function App() {
           </Reveal>
           
           <Reveal animation="scale-up" delay={800}>
-            <Button 
-              size="lg" 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-xl transition-transform hover:scale-105"
-              asChild
-            >
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                Ver Disponibilidade
-              </a>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  size="lg" 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-8 py-6 rounded-full shadow-xl transition-transform hover:scale-105"
+                >
+                  Ver Disponibilidade
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-center text-lg">Entre em contato com um dos proprietários</DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col gap-4 mt-4">
+                  <Button variant="default" className="w-full text-lg h-12" asChild>
+                    <a href="https://wa.link/rf7prh" target="_blank" rel="noopener noreferrer">
+                      Contato 1
+                    </a>
+                  </Button>
+                  <Button variant="default" className="w-full text-lg h-12" asChild>
+                    <a href="https://wa.link/u1b62u" target="_blank" rel="noopener noreferrer">
+                      Contato 2
+                    </a>
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
           </Reveal>
         </div>
       </section>
@@ -248,14 +271,6 @@ export default function App() {
                 A casa está localizada em rua tranquila, garantindo silêncio e segurança, mas a uma curta caminhada tanto da praia quanto do centrinho gastronômico e charmosos shoppings de verão.
               </p>
             </Reveal>
-
-            <Reveal animation="fade-up" delay={400}>
-              <Button variant="outline" className="rounded-full mt-4" asChild>
-                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer">
-                  Ver no Mapa <ArrowRight className="ml-2 w-4 h-4" />
-                </a>
-              </Button>
-            </Reveal>
           </div>
           
           <div className="relative z-10 h-full flex items-center">
@@ -286,15 +301,33 @@ export default function App() {
           </Reveal>
           
           <Reveal animation="scale-up" delay={400}>
-            <Button 
-              size="lg" 
-              className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 rounded-full shadow-2xl transition-transform hover:scale-105"
-              asChild
-            >
-              <a href={WHATSAPP_LINK} target="_blank" rel="noopener noreferrer">
-                Falar no WhatsApp
-              </a>
-            </Button>
+            <Dialog>
+              <DialogTrigger asChild>
+                <Button 
+                  size="lg" 
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 rounded-full shadow-2xl transition-transform hover:scale-105"
+                >
+                  Falar no WhatsApp
+                </Button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-md">
+                <DialogHeader>
+                  <DialogTitle className="text-center text-lg">Entre em contato com um dos proprietários</DialogTitle>
+                </DialogHeader>
+                <div className="flex flex-col gap-4 mt-4">
+                  <Button variant="default" className="w-full text-lg h-12" asChild>
+                    <a href="https://wa.link/rf7prh" target="_blank" rel="noopener noreferrer">
+                      Contato 1
+                    </a>
+                  </Button>
+                  <Button variant="default" className="w-full text-lg h-12" asChild>
+                    <a href="https://wa.link/u1b62u" target="_blank" rel="noopener noreferrer">
+                      Contato 2
+                    </a>
+                  </Button>
+                </div>
+              </DialogContent>
+            </Dialog>
           </Reveal>
         </div>
       </section>
