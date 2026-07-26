@@ -1,18 +1,17 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/components/ui/dialog";
+  DropdownMenu,
+  DropdownMenuContent,
+  DropdownMenuItem,
+  DropdownMenuTrigger,
+} from "@/components/ui/dropdown-menu";
 import { Gallery } from '@/components/Gallery';
 import { Reveal } from '@/components/Reveal';
 import { HERO_IMAGE, GALLERY_IMAGES } from '@/lib/images';
 import { 
   Wifi, Waves, Wind, Car, MapPin, 
-  Coffee, Sun, Trees, Instagram 
+  Coffee, Sun, Trees, Instagram, ChevronDown
 } from 'lucide-react';
 import { useInView } from '@/hooks/use-in-view';
 import { cn } from '@/lib/utils';
@@ -270,44 +269,38 @@ export default function App() {
             <Sun className="w-12 h-12 text-primary mx-auto opacity-80" strokeWidth={1} />
           </Reveal>
           
-          <Reveal animation="fade-up" delay={100}>
-            <h2 className="text-4xl md:text-6xl font-serif">Sua próxima viagem começa aqui.</h2>
-          </Reveal>
-          
-          <Reveal animation="fade-up" delay={200}>
-            <p className="text-xl text-white/60 font-light">
-              Consulte nossas datas disponíveis e garanta seus dias de descanso.
-            </p>
-          </Reveal>
-          
           <Reveal animation="scale-up" delay={400}>
-            <Dialog>
-              <DialogTrigger asChild>
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
                 <Button 
                   size="lg" 
-                  className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 rounded-full shadow-2xl transition-transform hover:scale-105"
+                  className="bg-primary text-primary-foreground hover:bg-primary/90 text-lg px-10 py-7 rounded-full shadow-2xl transition-transform hover:scale-105 outline-none flex items-center"
                 >
-                  Falar no WhatsApp
+                  Entre em contato <ChevronDown className="ml-2 w-5 h-5" />
                 </Button>
-              </DialogTrigger>
-              <DialogContent className="sm:max-w-md data-[state=open]:animate-in data-[state=open]:fade-in-0 data-[state=open]:zoom-in-95 data-[state=open]:slide-in-from-bottom-10 duration-300">
-                <DialogHeader>
-                  <DialogTitle className="text-center text-lg">Entre em contato com um dos proprietários</DialogTitle>
-                </DialogHeader>
-                <div className="flex flex-col gap-4 mt-4">
-                  <Button variant="default" className="w-full text-lg h-12" asChild>
-                    <a href="https://wa.link/rf7prh" target="_blank" rel="noopener noreferrer">
-                      Contato 1
-                    </a>
-                  </Button>
-                  <Button variant="default" className="w-full text-lg h-12" asChild>
-                    <a href="https://wa.link/u1b62u" target="_blank" rel="noopener noreferrer">
-                      Contato 2
-                    </a>
-                  </Button>
-                </div>
-              </DialogContent>
-            </Dialog>
+              </DropdownMenuTrigger>
+              
+              <DropdownMenuContent align="center" sideOffset={12} className="w-[280px] p-2 rounded-2xl shadow-xl">
+                <DropdownMenuItem asChild className="text-base cursor-pointer p-4 focus:bg-primary/10 rounded-xl mb-1 transition-colors">
+                  <a href="https://wa.link/rf7prh" target="_blank" rel="noopener noreferrer">
+                    WhatsApp - Contato 1
+                  </a>
+                </DropdownMenuItem>
+                
+                <DropdownMenuItem asChild className="text-base cursor-pointer p-4 focus:bg-primary/10 rounded-xl mb-1 transition-colors">
+                  <a href="https://wa.link/u1b62u" target="_blank" rel="noopener noreferrer">
+                    WhatsApp - Contato 2
+                  </a>
+                </DropdownMenuItem>
+                
+                <DropdownMenuItem asChild className="text-base cursor-pointer p-4 focus:bg-primary/10 rounded-xl transition-colors">
+                  <a href="https://www.instagram.com/juquehy_home?igsh=MWZhcmR2dDJiODhiaw==" target="_blank" rel="noopener noreferrer" className="flex items-center">
+                    <Instagram className="w-4 h-4 mr-2" />
+                    Falar pelo Instagram
+                  </a>
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
           </Reveal>
         </div>
       </section>
