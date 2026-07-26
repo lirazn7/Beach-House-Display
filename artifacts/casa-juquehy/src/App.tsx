@@ -341,7 +341,7 @@ export default function App() {
           </div>
           
           <div className="flex gap-4">
-            <a href="#" className="hover:text-white transition-colors">
+            <a href="https://www.instagram.com/juquehy_home?igsh=MWZhcmR2dDJiODhiaw==" className="hover:text-white transition-colors">
               <Instagram className="w-5 h-5" />
             </a>
           </div>
